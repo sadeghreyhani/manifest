@@ -1,0 +1,14 @@
+
+.c-page-header {
+    padding: 4rem 0.5rem;
+    @include mq(mobile) {
+    padding: 2rem 0 8rem;
+    }
+  }
+  .c-page-header__title {
+    @include h2;
+    @include mq(mobile) {
+    font-size: 3rem !important;
+    }
+  }
+  

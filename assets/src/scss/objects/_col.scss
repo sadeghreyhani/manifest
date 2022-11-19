@@ -1,0 +1,9 @@
+.o-col {
+  padding: 0;
+  @include mq(desktop) {
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 1rem;
+    flex-basis: 100%;
+  }
+}

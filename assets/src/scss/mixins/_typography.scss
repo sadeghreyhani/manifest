@@ -1,0 +1,64 @@
+@mixin h1 {
+  font-family: "RedHatDisplay";
+  font-size: 3rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@mixin h2 {
+  font-family: "RedHatDisplay";
+  font-size: 1.438rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h3 {
+  font-family: "RedHatDisplay";
+  font-size: 1.188rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h4 {
+  font-family: "RedHatDisplay";
+  font-size: 1rem;
+  line-height: 166%;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+@mixin h5 {
+  font-family: "RedHatDisplay";
+  font-size: 0.813rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+}
+
+@mixin h6 {
+  font-family: "RedHatDisplay";
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+@mixin p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.188rem;
+  line-height: 2rem;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+
+@mixin body-font-medium {
+  font-family: "RedHatDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+  color: #565656;
+}

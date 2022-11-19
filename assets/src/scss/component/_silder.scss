@@ -1,0 +1,28 @@
+
+.carousel {
+  background: rgb(255, 255, 255);
+}
+.c-slider__image {
+  background-size: contain;
+  display: block;
+  height: 15.625rem;
+  width: 16.25rem;
+  margin: 0 0.625rem;
+  object-fit: cover;
+  overflow: hidden;
+  @include mq(tablet , desktop) { 
+    width: 25rem;
+    height: 25rem;
+  }
+  @include mq(desktop) {
+    height: 31.25rem;
+    width: 31.25rem;
+    margin-right: 0.625rem;
+  }
+}
+.c-slider__title {
+  @include h3;
+}
+.c-slider__title:hover {
+  color: #7b7b77;
+}

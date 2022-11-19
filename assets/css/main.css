@@ -1,0 +1,995 @@
+/* red-hat-display-regular - latin */
+@font-face {
+  font-family: "RedHatDisplay";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/RedHatDisplay.woff2") format("woff2"), url("../fonts/RedHatDisplay.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/lato-v23-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/lato-v23-latin-regular.woff2") format("woff2"), url("../fonts/lato-v23-latin-regular.woff") format("woff");
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato";
+  font-size: 1rem;
+  position: relative;
+}
+
+.fa-solid {
+  color: rgb(0, 0, 0);
+}
+
+.fa-solid:hover {
+  cursor: pointer;
+  color: #989898;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  color: #7b7b7b;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (min-width: 64em) {
+  .c-navbar {
+    margin: 3.125rem 0 4.375rem;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+  }
+}
+
+.c-navbar__logo {
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  padding-top: 0.55rem;
+}
+@media (min-width: 64em) {
+  .c-navbar__logo {
+    padding: 0;
+  }
+}
+
+.c-navbar-links {
+  height: 100%;
+}
+
+.c-navbar-links ul {
+  display: flex;
+  margin: 0 4.375rem 0 0;
+  padding: 0;
+}
+
+.c-navbar-links li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c-navbar-links li a {
+  font-family: "RedHatDisplay";
+  font-size: 0.813rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  padding: 0;
+  margin-right: 2.5rem;
+}
+
+.c-toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.875rem;
+  height: 1.313rem;
+}
+
+@media (min-width: 1em) and (max-width: 64em) {
+  .c-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .c-toggle-button {
+    display: flex;
+  }
+  .c-navbar-links {
+    border: solid 2px #7b7b7b;
+    display: none;
+    width: 100%;
+  }
+  .c-navbar-links ul {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  #js-nav__active {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .c-navbar-links ul li {
+    text-align: center;
+  }
+  .c-navbar-links ul li a {
+    padding: 1rem 1rem;
+  }
+  .c-navbar-links.active {
+    display: flex;
+  }
+}
+.c-navbar__search-toggle {
+  top: 0.8rem;
+  right: 3.5rem;
+  position: absolute;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+}
+@media (min-width: 64em) {
+  .c-navbar__search-toggle {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.c-navbar__search-toggle:hover {
+  opacity: 0.6;
+}
+
+.c-toggle-button span {
+  display: block;
+  position: absolute;
+  height: 0.188rem;
+  width: 100%;
+  background: #000000;
+  border-radius: 0.625rem;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.c-toggle-button span:nth-child(1) {
+  top: 0rem;
+}
+
+.c-toggle-button span:nth-child(2) {
+  top: 0.625rem;
+}
+
+.c-toggle-button span:nth-child(3) {
+  top: 1.25rem;
+}
+
+.c-toggle-button.open span:nth-child(1) {
+  top: 0.625rem;
+  transform: rotate(135deg);
+}
+
+.c-toggle-button.open span:nth-child(2) {
+  opacity: 0;
+  left: -3.75rem;
+}
+
+.c-toggle-button.open span:nth-child(3) {
+  top: 0.625rem;
+  transform: rotate(-135deg);
+}
+
+.active,
+.c-nav__link:hover {
+  border-bottom: 1px solid #000000;
+}
+
+.c-search-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 11;
+}
+
+.c-search__icon {
+  position: fixed;
+  top: 25%;
+  right: 15%;
+  width: 2.5rem;
+  cursor: pointer;
+}
+@media (min-width: 48em) {
+  .c-search__icon {
+    right: 25%;
+  }
+}
+@media (min-width: 64em) {
+  .c-search__icon {
+    right: 30%;
+  }
+}
+
+.c-search__icon:hover {
+  opacity: 0.65;
+}
+
+.c-search-box__item img {
+  width: 2.2rem;
+  cursor: pointer;
+}
+
+.c-search-box__item img:hover {
+  opacity: 0.65;
+}
+
+.c-search-box__item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 1px solid #000000;
+}
+
+.c-search-box__item__input {
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: 2.3rem;
+  padding: 10px 30px;
+  background-color: transparent;
+}
+
+.c-search-box__item button {
+  border: none;
+  background-color: transparent;
+}
+
+@keyframes menuAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  49% {
+    opacity: 0;
+  }
+  50% {
+    oppacity: 1;
+  }
+  51% {
+    oppacity: 1;
+  }
+  52% {
+    opacity: 0;
+  }
+}
+.searchBoxBorder {
+  border-top: 3px dotted #000000;
+  border-left: 3px dotted #000000;
+  border-right: 3px dotted #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.c-page-header {
+  padding: 4rem 0.5rem;
+}
+@media (min-width: 36em) {
+  .c-page-header {
+    padding: 2rem 0 8rem;
+  }
+}
+
+.c-page-header__title {
+  font-family: "RedHatDisplay";
+  font-size: 1.438rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@media (min-width: 36em) {
+  .c-page-header__title {
+    font-size: 3rem !important;
+  }
+}
+
+.carousel {
+  background: rgb(255, 255, 255);
+}
+
+.c-slider__image {
+  background-size: contain;
+  display: block;
+  height: 15.625rem;
+  width: 16.25rem;
+  margin: 0 0.625rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .c-slider__image {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+@media (min-width: 64em) {
+  .c-slider__image {
+    height: 31.25rem;
+    width: 31.25rem;
+    margin-right: 0.625rem;
+  }
+}
+
+.c-slider__title {
+  font-family: "RedHatDisplay";
+  font-size: 1.188rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.c-slider__title:hover {
+  color: #7b7b77;
+}
+
+.c-info {
+  margin: 2.5rem 0;
+}
+@media (min-width: 36em) {
+  .c-info {
+    margin: 10rem 0;
+  }
+}
+
+.c-info__main {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 64em) {
+  .c-info__main {
+    flex-direction: row;
+  }
+}
+
+.c-info__main__title {
+  margin-right: 15px;
+}
+.c-info__main__title h2 {
+  font-family: "RedHatDisplay";
+  font-size: 1.438rem;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 3.125rem;
+}
+@media (min-width: 64em) {
+  .c-info__main__title span {
+    margin-top: 2.2rem;
+  }
+}
+
+.c-info__main--p {
+  margin-left: 15px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.188rem;
+  line-height: 2rem;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+
+.c-info__content:hover .c-info__text-link {
+  max-width: 7rem;
+}
+
+.c-info__text-link {
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.5s;
+  line-height: 0.85;
+}
+
+.c-posts {
+  margin: 0 0 3.125rem;
+}
+@media (min-width: 36em) {
+  .c-posts {
+    margin: 0 0 8.125rem;
+  }
+}
+
+.c-posts__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-posts__header__title {
+  font-family: "RedHatDisplay";
+  font-size: 1.438rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.c-posts__header__link {
+  font-family: "RedHatDisplay";
+  font-size: 1.188rem;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-right: 0.55rem;
+}
+
+.c-post {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 36em) {
+  .c-post {
+    flex-direction: row;
+  }
+}
+
+.c-post__main {
+  margin-bottom: 3.125rem;
+  width: 100%;
+  flex-direction: column;
+}
+
+.c-post__main__image {
+  width: 100%;
+  height: 15.625rem;
+  object-fit: cover;
+}
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .c-post__main__image {
+    width: 9.375rem;
+  }
+}
+
+.c-post__main__image img {
+  width: 21.875rem;
+  height: 15.625rem;
+  object-fit: cover;
+  object-position: center;
+}
+@media (min-width: 1em) and (max-width: 47.99em) {
+  .c-post__main__image img {
+    width: 100%;
+  }
+}
+
+.c-post__main__category-time {
+  display: flex;
+  padding-right: 1.563rem;
+  align-items: center;
+  font-family: "RedHatDisplay";
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #7b7b7b;
+}
+
+.c-post__main__category {
+  color: #7b7b7b;
+}
+
+.c-post__main__category:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.c-post__main__title {
+  font-family: "RedHatDisplay";
+  font-size: 1.438rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.c-post__main__title a:hover {
+  color: #7b7b7b;
+}
+
+.c-post__main__description {
+  font-family: "RedHatDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+
+.c-article__category {
+  font-size: 5rem;
+}
+
+.c-footer {
+  background-color: #f4f4f4;
+  padding: 3.125rem 0;
+}
+@media (min-width: 48em) {
+  .c-footer {
+    padding: 10rem 0;
+  }
+}
+
+.c-footer__contant {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@media (min-width: 48em) {
+  .c-footer__contant {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.c-footer__cta__title {
+  margin-top: 0;
+  font-family: "RedHatDisplay";
+  font-size: 3rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.c-footer__cta__communication {
+  color: #000000;
+  font-family: "RedHatDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 166%;
+  letter-spacing: 0.05em;
+  color: #565656;
+}
+
+.c-social-media__items {
+  font-family: "RedHatDisplay";
+  font-size: 1rem;
+  line-height: 166%;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+.c-social-media__items :first-child {
+  margin-top: 1.25rem;
+}
+
+.c-social-media__items a:hover {
+  color: #7b7b7b;
+}
+
+.c-social-media__links {
+  margin-bottom: 1.25rem;
+}
+
+.c-footer__copy p {
+  cursor: pointer;
+  font-family: "RedHatDisplay";
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+@media (min-width: 64em) {
+  .c-footer__copy p {
+    margin-top: 10rem;
+  }
+}
+
+.c-footer__communication a:hover {
+  color: #7b7b7b;
+}
+
+/*-------------------------------------------------------------------------------
+  17.Comment Section Styling
+-------------------------------------------------------------------------------*/
+.comments-area {
+  margin: 13rem 0;
+}
+
+#respond h3, .comments-title {
+  color: black;
+  padding: 20px;
+  font-size: 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 30px 0;
+}
+
+#commentform .comment-notes {
+  margin-bottom: 20px;
+}
+
+#commentform label {
+  display: block;
+}
+
+#commentform input[type=text],
+#commentform input[type=url],
+#commentform input[type=email],
+#commentform textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 7px 10px;
+  font-size: 18px;
+}
+
+#commentform input[type=submit] {
+  line-height: 38px;
+  border-radius: 4px;
+  padding: 0 20px;
+  background-color: #fdb813;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  position: relative;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+#commentform input[type=submit]:hover {
+  background-color: #6e551a;
+  color: white;
+}
+
+.comment-body .comment-author {
+  float: left;
+  width: 30%;
+}
+
+.comment-body .comment-author .fn {
+  display: block;
+  margin-top: 10px;
+}
+
+.comment-body {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.comment {
+  margin-bottom: 30px;
+}
+
+.comment-list, .children {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.comment-list > li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.comment {
+  border-top: 1px solid #ccc;
+  padding-top: 30px;
+  position: relative;
+}
+
+.children .comment {
+  border-top: 0;
+}
+
+.comment .children {
+  border-top: 1px dotted #5e666b;
+  border-left: 1px dotted #5e666b;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.children {
+  margin-left: 100px;
+}
+
+.children img {
+  max-width: 75px;
+  height: auto;
+}
+
+.children .fn {
+  font-size: 12px;
+}
+
+.says {
+  display: none;
+}
+
+.comment-metadata {
+  margin-left: 30%;
+}
+
+.comment-metadata a {
+  color: #5e666b;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.comment-reply-link {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  font-size: 12px;
+  color: #1a3794;
+}
+
+.c-article {
+  padding: 10px;
+  font-family: "RedHatDisplay";
+  font-size: 1.188rem;
+  line-height: 1.4;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.c-article__category-link {
+  margin-left: -2.438rem;
+  font-family: "RedHatDisplay";
+  font-size: 1.188rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.c-article__category-time {
+  display: flex;
+  font-family: "RedHatDisplay";
+  font-size: 1rem;
+  line-height: 166%;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.c-article__comments-number {
+  margin-right: 2.5rem;
+}
+
+.c-article__title a {
+  font-family: "RedHatDisplay";
+  font-size: 3rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.c-article__tumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.o-grid {
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+@media (min-width: 36em) {
+  .o-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.c-archive__post-pagination {
+  margin: 3rem;
+  text-align: center;
+}
+
+.page-numbers {
+  text-align: center;
+  padding: 0.7rem 1.4rem;
+  background-color: rgb(221, 221, 221);
+}
+
+.o-col {
+  padding: 0;
+}
+@media (min-width: 64em) {
+  .o-col {
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 1rem;
+    flex-basis: 100%;
+  }
+}
+
+.o-wrapper {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/*! Flickity v2.3.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: 0;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.flickity-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #333;
+}
+
+.flickity-button:hover {
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.flickity-button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 5px #19f;
+}
+
+.flickity-button:active {
+  opacity: 0.6;
+}
+
+.flickity-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.flickity-button-icon {
+  fill: currentColor;
+}
+
+.flickity-prev-next-button {
+  top: 50%;
+  width: 72px;
+  height: 72px;
+  /* border-radius: 50%; */
+  transform: translateY(-50%);
+}
+@media (min-width: 1em) and (max-width: 63.99em) {
+  .flickity-prev-next-button {
+    opacity: 0;
+  }
+}
+
+.flickity-prev-next-button.previous {
+  left: 10px;
+}
+
+.flickity-prev-next-button.next {
+  right: 10px;
+}
+
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: unset;
+  right: 35%;
+  top: 30%;
+  width: 35%;
+  height: 35%;
+}
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl {
+  direction: rtl;
+}
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}

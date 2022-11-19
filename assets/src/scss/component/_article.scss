@@ -1,0 +1,50 @@
+.c-article {
+    padding: 10px;
+@include h3;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.c-article__category-link {
+margin-left: -2.438rem;
+@include h3;
+}
+.c-article__category-time {
+display: flex;
+@include h4;
+}
+.c-article__comments-number {
+margin-right: 2.5rem;
+}
+.c-article__title a {
+@include h1;
+}
+
+.c-article__tumbnail {
+    width: 100%;
+    height: auto;
+}
+// archive 
+.o-grid {
+    grid-template-columns: repeat(1, 1fr);
+    @include mq(mobile){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    display: grid;
+    
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    padding-right: 1rem;
+    padding-left: 1rem
+}
+.c-archive__post-pagination {
+    margin: 3rem;
+    text-align: center;
+}
+.page-numbers {
+    text-align: center;
+    padding: 0.7rem 1.4rem;
+    background-color: rgb(221, 221, 221);
+}

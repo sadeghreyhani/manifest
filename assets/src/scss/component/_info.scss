@@ -1,0 +1,47 @@
+.c-info {
+  margin: 2.5rem 0;
+ 
+  @include mq(mobile) {
+    margin: 10rem 0;
+    
+  }
+}
+.c-info__main {
+  display: flex;
+  flex-direction: column;
+  @include mq(desktop) {
+    flex-direction: row;
+  }
+}
+
+.c-info__main__title {
+  margin-right: 15px;
+  h2 {
+    @include h2;
+    margin-bottom: 3.125rem;
+}
+span {
+  @include mq(desktop) {
+    margin-top: 2.2rem;
+  }
+}
+}
+
+.c-info__main--p {
+  margin-left: 15px;
+  @include p;
+}
+
+.c-info__content:hover {
+  .c-info__text-link {
+    max-width: 7rem;
+  }
+}
+.c-info__text-link {
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.5s;
+  line-height: 0.85;
+}
