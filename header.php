@@ -23,7 +23,7 @@
             }
             ?>
 
-            <div class="c-navbar__logo"><a href="http://manifest.local/"><img src="<?php echo $logo[0] ?>" alt="logo"></a></div>
+            <div class="c-navbar__logo"><a href="#"><img src="<?php echo $logo[0] ?>" alt="logo"></a></div>
 
             <img class="c-navbar__search-toggle is-open" src="/wp-content/themes/manifest/assets/images/search_icon.svg" alt="">
             <a href="#" class="c-toggle-button">

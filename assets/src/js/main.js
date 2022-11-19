@@ -1,16 +1,16 @@
 
 // active button
-var header = document.getElementById("js-nav__active");
-var btns = header.getElementsByClassName("c-navbar__link");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
-    }
-    this.className += " active";
-  });
-}
+// var header = document.getElementById("js-nav__active");
+// var btns = header.getElementsByClassName("c-navbar-links");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function () {
+//     var current = document.getElementsByClassName("active");
+//     if (current.length > 0) {
+//       current[0].className = current[0].className.replace(" active", "");
+//     }
+//     this.className += " active";
+//   });
+// }
 
 // Search Box
 const searchToggle = document.getElementsByClassName("is-open");

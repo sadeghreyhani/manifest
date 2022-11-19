@@ -793,7 +793,7 @@
       var i = a.getQueryElement(t);
       if (!i) {
         if (c) {
-          c.error("Bad element for Flickity: " + (i || t));
+          // c.error("Bad element for Flickity: " + (i || t));
         }
         return;
       }
